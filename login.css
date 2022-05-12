@@ -1,0 +1,68 @@
+.login {
+  display: flex;
+  min-height: calc(80vh - 78px);
+  margin-top: 78px
+}
+.login-img {
+  flex: 1;
+  background-image: url('images/login.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 52px;
+}
+.login-form h1 {
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 30px
+}
+.login-form p {
+  margin-bottom: 20px
+}
+.login-form p a {
+  color: black;
+  margin-bottom: 20px;
+}
+.login-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(20, 26, 22, 0.4);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.login-form .login-forgot {
+  color: rgba(20, 26, 22, 0.5);
+  text-decoration: none;
+  margin-left: 60px;
+}
+.login-form button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0 black;
+}
+#error {
+  color: red;
+}
+
+@media only screen and (max-width: 767px) {
+  .login {
+    flex-direction: column;
+    margin-top: 78px
+  }
+  .login-img {
+    background-image: url('images/login-sm.png');
+    padding: 50px 
+  }
+}

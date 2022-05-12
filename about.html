@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>HelloWorld Clothing</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="about.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="loadItems()">
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top">
+          <div class="container-fluid">
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span>
+                <i class="bi bi-list"></i>
+              </span>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <img class="offcanvas-title" id="offcanvasNavbarLabel" src="images/logo_baltas.svg" alt="Logo">
+                
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav pe-3">
+                  <li class="nav-item" id="cart-link">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Collection</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li id="mob-profile" class="nav-item d-md-none">
+                    <a class="nav-link" href="login.html">Login</a>
+                  </li>
+                  <li class="nav-item d-md-none">
+                    <a class="nav-link" href="#">Wishlist</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a class="navbar-brand" href="index.html">
+              <img src="/images/logo_juodas.svg" alt="Logo">
+            </a>
+            <div class="icons">
+              <i class="fas fa-search d-none d-md-inline-block"></i>
+              <a id="profile-page" class="nav-link d-none d-md-inline-block" href="profile.html"><i class="far fa-user"></i></a>
+              <i class="far fa-heart d-none d-md-inline-block"></i>
+              <i onclick="showCart()" class="far fa-shopping-bag"><sub id="cartItemsNumber">0</sub></i>
+            </div>
+            </div>
+          </nav>
+          <div class="cart" id="cart">
+
+            <div class="cart-title">
+              <h1>Shopping cart</h1>
+              <p onclick="hideCart()"><i class="fas fa-times"></i></p>
+            </div>
+            <div class="no-item_info">
+              Šiuo metu krepšelyje pridėtų prekių nėra!
+            </div>
+            <div class="cart-items">
+            </div>
+            
+            <div class="cart-bottom">
+              <div class="subtotal">
+                <p>Subtotal</p>
+                <p class="total-sum">$0.00</p>
+              </div>
+              <button>SUBTOTAL</button>
+            </div>
+
+          </div>
+    </header>
+      <div id="backdrop"></div>
+      <div class="modal">
+        
+        <p onclick="closeModal()" id="modal-close"><i class="fas fa-times"></i></p>
+        <div class="modal-content">
+          <div class="modal-img">
+            <div class="small-img">
+              
+            </div>
+            <div class="big-img">
+            </div>
+          </div>
+          <div class="modal-info">
+            <div class="modal-info_title"></div>
+            <div class="modal-info_price"></div>
+            <div class="modal-info_description"></div>
+            <button onclick="addToCartClicked(this)" class="modal-info_button">ADD TO CART</button>
+          </div>
+        </div>
+        
+      </div>
+<!--       about psl          -->
+
+<section class="about">
+  <div class="about_us">
+    <div class="about_us-left">
+      <img src="images/about1.png" alt="about image">
+    </div>
+    <div class="about_us-right">
+      <h1>TAP INTO YOUR POWER</h1>
+      <p>Metal Umbrella was created to inspire you to be the best version of yourself. Our goal is to bring you clothes that blanket you in quality, design, and comfort.</p>
+      <p>We want those who wear Metal Umbrella to feel <b>vibrant, comfortable</b> in their skin, and <b>authentic</b> to themselves.</p>
+      <img src="images/about2.png" alt="">
+    </div>
+  </div>
+  <div class="vision">
+    <div class="vision-text">
+      <h2>our vision</h2>
+      <p>We aim to inspire and ignite the spark in you that makes you — you. Join us as we tell the story that makes us, us.</p>
+    </div>
+    <div class="vision-img">
+      <img src="images/about3.png" alt="">
+      <img src="images/about4.png" alt="">
+    </div>
+  </div>
+  <div class="what-is">
+    <div class="what-is_text">
+      <h2>What’s metal umbrella?</h2>
+      <p>Metal Umbrella is a modern gaming, and anime-inspired apparel brand. We’re built for the digital generation, inspiring you to feel confident no matter what your passions are.</p>
+      <p>At the heart of our brand lies the storytellers, creators, and people following their own path. We want you to feel confident, empowered, and proud to be yourself. And if you aren't there yet, we'll help you get there.</p>
+      <p>Our goal is to pioneer a new standard of apparel in the gaming industry. We aim to set a new benchmark by consistently providing original designs, high quality products, and an inclusive size range for all genders.</p>
+    </div>
+    <div class="what-is_img">
+      <img src="images/about5.png" alt="">
+    </div>
+  </div>
+  <div class="under_helloworld">
+    <div class="under_helloworld-img">
+      <img src="images/under-sm.png" alt="">
+      <img src="images/under1.png" alt="">
+    </div>
+    <div class="under_helloworld-text">
+      <h2>UNDER THE UMBRELLA</h2>
+      <p>Founders Daniela Ali and Ali Hassan are the innovators behind Metal Umbrella. Ali is most notably known as streamer and content creator, SypherPK. Daniela Ali, his wife and business partner, is known for her entrepreneurial involvement in SypherPK’s brand and other ventures. </p>
+      <p>Together, the duo have launched Metal Umbrella, with the goal to bring high quality clothing with inclusive sizing to the gaming industry. When Ali and Daniela envisioned Metal Umbrella, they felt it important to stress how much they value creativity and doing what’s best for themselves. </p>
+      <p>Daniela focused on customer experience and the operations of the brand. She worked with an industry-leading design team based in Texas to make the duo’s vision come to life. Ali focused on the messaging, fit, and design of the brand. Daniela and Ali spent months poring over the materials, designs, and quality of the fabrics to create an apparel line that resonated with their vision. Their careers have been an example of the magic that can happen when you trust yourself and how far you can go. </p>
+    </div>
+  </div>
+  
+</section>
+<footer>
+  <div class="footer-top">
+    <div class="footer-newsletter">
+      <h2>Let us send you some love letters</h2>
+      <div class="footer-input">
+        <i class="bi bi-envelope"></i>
+        <input type="text" placeholder="enter your email">
+      </div>
+    </div>
+    <div class="footer-menu">
+      <div class="footer-logo">
+        <img src="images/logo_baltas.svg" alt="logo">
+      </div>
+      <div class="footer-menu_items">
+        <div class="footer-menu_left">
+          <a href="about.html">about us</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Refund Policy</a>
+          <a href="#">Sizing Charts</a>
+          <a href="contact.html">contact us</a>
+        </div>
+        <div class="footer-menu_right">
+          <a href="#">faq</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Umby Club FAQ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-social_networks">
+      <h2>Let's be friends</h2>
+      <ul>
+        <li><i class="bi bi-instagram"></i></li>
+        <li><i class="bi bi-facebook"></i></li>
+        <li><i class="bi bi-twitter"></i></li>
+        <li><i class="bi bi-youtube"></i></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy;.2022 helloworld Clothing. all right reserved</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

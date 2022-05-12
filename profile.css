@@ -1,0 +1,66 @@
+.profile {
+  margin-top: 78px;
+  display: flex;
+  height: 70vh;
+}
+.profile-menu {
+  flex: 0.3;
+  background-color: #d9d9d9;
+  padding: 60px 30px
+}
+.profile-menu__links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.profile-menu h3 {
+  text-transform: uppercase;
+}
+.profile-menu__links a:not(:last-child) {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.profile-menu__links a:last-child {
+  color: black;
+  margin-top: 20px
+}
+.profile-info {
+  flex: 0.7;
+  padding: 60px 80px
+}
+.profile-info a {
+  display: none;
+}
+.profile-info__greeting {
+  display: flex;
+  align-items: center
+}
+
+@media only screen and (max-width: 725px) {
+  .profile {
+    flex-direction: column;
+    margin-top: 66px;
+  }
+  .profile-menu__links {
+    display: none
+  }
+  .profile-menu {
+    flex: 0.1;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .profile-info {
+    padding: 20px
+  }
+  .profile-info a {
+    display: block;
+    color: black;
+    font-size: 20px
+}
+}
